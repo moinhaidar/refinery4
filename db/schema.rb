@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802130957) do
+ActiveRecord::Schema.define(version: 20150803061663) do
 
   create_table "refinery_events", force: true do |t|
     t.string   "title"
@@ -35,6 +35,37 @@ ActiveRecord::Schema.define(version: 20150802130957) do
     t.string   "image_title"
     t.string   "image_alt"
   end
+
+  create_table "refinery_menus", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "permatitle"
+  end
+
+  add_index "refinery_menus", ["permatitle"], name: "index_refinery_menus_on_permatitle", unique: true, using: :btree
+
+  create_table "refinery_menus_links", force: true do |t|
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.integer "refinery_menu_id"
+    t.string  "menu_match"
+    t.integer "resource_id"
+    t.string  "resource_type"
+    t.string  "title_attribute"
+    t.string  "custom_url"
+    t.string  "label"
+    t.string  "id_attribute"
+    t.string  "class_attribute"
+  end
+
+  add_index "refinery_menus_links", ["depth"], name: "index_refinery_menus_links_on_depth", using: :btree
+  add_index "refinery_menus_links", ["id"], name: "index_refinery_menus_links_on_id", using: :btree
+  add_index "refinery_menus_links", ["lft"], name: "index_refinery_menus_links_on_lft", using: :btree
+  add_index "refinery_menus_links", ["parent_id"], name: "index_refinery_menus_links_on_parent_id", using: :btree
+  add_index "refinery_menus_links", ["rgt"], name: "index_refinery_menus_links_on_rgt", using: :btree
 
   create_table "refinery_page_part_translations", force: true do |t|
     t.integer  "refinery_page_part_id", null: false

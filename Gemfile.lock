@@ -43,6 +43,13 @@ GIT
       refinerycms-core (= 3.0.0)
 
 PATH
+  remote: /home/moin/workspace/aidctv/plugins/refinerycms-menus
+  specs:
+    refinerycms-menus (2.0.8.dev)
+      awesome_nested_set (~> 3.0.0)
+      refinerycms-core (>= 3.0.0)
+
+PATH
   remote: vendor/extensions
   specs:
     refinerycms-events (1.0)
@@ -133,9 +140,13 @@ GEM
     mysql2 (0.3.18)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
+    protected_attributes (1.0.9)
+      activemodel (>= 4.0.1, < 5.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.5.3)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.5)
@@ -151,6 +162,11 @@ GEM
     rails-i18n (4.0.4)
       i18n (~> 0.6)
       railties (~> 4.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.1.5)
       actionpack (= 4.1.5)
       activesupport (= 4.1.5)
@@ -200,8 +216,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.9.3)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -219,16 +233,20 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  protected_attributes (~> 1.0.9)
   quiet_assets
+  rack-cache
   rails (= 4.1.5)
+  rails_12factor
+  rails_stdout_logging
   refinerycms!
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.0)
   refinerycms-events!
+  refinerycms-menus!
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
-  turbolinks
   uglifier (>= 1.3.0)
 
 BUNDLED WITH

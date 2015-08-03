@@ -8,3 +8,5 @@
 
 # Added by Refinery CMS Events extension
 Refinery::Events::Engine.load_seed
+      # Added by Refinery CMS Page Menus extension
+      Refinery::Menus::Engine.load_seed
